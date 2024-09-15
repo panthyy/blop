@@ -75,7 +75,7 @@ blop import -f manifest.yaml
 This will make the cli remember the manifest and you can use it by running:
 
 ```
-blop gen gp  or blop gp
+blop gen gp
 ```
 
 This will prompt you to enter the values for the variables and generate the project.
