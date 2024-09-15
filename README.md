@@ -7,7 +7,7 @@ Blop is a command-line tool that helps you quickly scaffold new projects based o
 To install Blop, you need to have Go installed on your system. Then, you can use the following command:
 
 ```
-go install github.com/panthyy/blop
+go install github.com/panthyy/blop@latest
 ```
 
 This will install the `blop` binary in your `$GOPATH/bin` directory. Make sure this directory is in your system's PATH.
