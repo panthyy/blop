@@ -1,0 +1,45 @@
+id: "gp"
+name: "Generate Project"
+description: "Generate a new project with the selected framework and language"
+variables:
+  name:
+    type: input
+    message: "Enter the project name"
+  description:
+    type: input
+    message: "Enter the project description"
+  framework:
+    type: select
+    options:
+      - name: "Next.js"
+        value: "nextjs"
+      - name: "React"
+        value: "react"
+      - name: "Vue"
+        value: "vue"
+  language:
+    type: select
+    options:
+      - name: "TypeScript"
+        value: "typescript"
+      - name: "JavaScript"
+        value: "javascript"
+files:
+  - path: "{{ .name }}/package.json"
+    content: |
+      {
+        "name": "{{ .name }}",
+        "version": "1.0.0",
+        "description": "{{ .description }}",
+        "main": "index.js",
+        "scripts": {
+          "start": "node index.js"
+        },
+        "dependencies": {
+          "{{ .framework }}": "{{ .version }}",
+          "{{ .language }}": "{{ .version }}"
+        }
+      }
+  - path: "{{ .name }}/index.js"
+    content: |
+      console.log("Hello, World!");
